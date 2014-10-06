@@ -1,0 +1,19 @@
+{
+  "name": "time-period",
+  "description": "",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dominictarr/time-period",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dominictarr/time-period.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "~3.0.0"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
+  "license": "MIT"
+}
