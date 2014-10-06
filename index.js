@@ -50,6 +50,8 @@ exports.ceil = function (time, period) {
   return 'number' === typeof time ? +d : d
 }
 
+exports.periods = periods
+
 periods.forEach(function (k) {
   exports.floor[k] = function (time) { return exports.floor(time, k) }
   exports.ceil[k] = function (time) { return exports.ceil(time, k) }
