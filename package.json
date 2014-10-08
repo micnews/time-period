@@ -1,7 +1,7 @@
 {
   "name": "time-period",
   "description": "get start/end of a given time period",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "homepage": "https://github.com/micnews/time-period",
   "repository": {
     "type": "git",
