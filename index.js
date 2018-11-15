@@ -25,17 +25,21 @@ function index (period) {
   return j
 }
 
-exports.floor = function (time, period) {
+exports.floor = function (time, period, size = 1) {
   var d = new Date(time)
   var j = index(period)
 
   for(var i = 0; i < j; i++)
     setters[i].call(d, i == dateIndex ? 1 : 0)
 
+  if(size > 1) {
+    var v = getters[j].call(d)
+    setters[j].call(d, v - v % size)
+  }
   return 'number' === typeof time ? +d : d
 }
 
-exports.ceil = function (time, period) {
+exports.ceil = function (time, period, size = 1) {
   var d = new Date(time)
   var j = index(period)
 
@@ -44,7 +48,7 @@ exports.ceil = function (time, period) {
 
   do {
     var v = getters[j].call(d)
-    setters[j].call(d, v + 1)
+    setters[j].call(d, v - (v % size) + size)
   } while(v == getters[j++].call(d))
 
   return 'number' === typeof time ? +d : d
